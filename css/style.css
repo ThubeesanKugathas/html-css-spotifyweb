@@ -160,6 +160,7 @@ main {
     margin-top: 10px;
     font-size: 13px;
     color: #fff;
+    margin-bottom: 30px;
 }
 
 .box-main nav ul {
@@ -168,6 +169,7 @@ main {
 
 .box-main nav ul li {
     display: inline-block;
+    margin: 0 10px;
 }
 
 .box-main nav ul li hr {
@@ -181,19 +183,50 @@ main {
     clear: both;
 }
 
-.recently-played h2 {
-    margin-left: 20px;
+.box-main h3,
+.box-main h2 {
+    margin: 5px 0;
     color: #fff;
 }
 
-.song {
-    float: left;
-    width: calc(100% / 8);
-    margin: 0 20px;
+.recently-played h2 {
+    margin-bottom: 20px;
 }
 
-.song img {
+.recently-played,
+.for-John,
+.popular {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.for-John>h3,
+.popular>h3 {
+    margin-bottom: 20px;
+    font-size: 10px;
+    color: #aaa;
+}
+
+.song-artist {
+    float: left;
+    width: calc(100% / 7);
+    margin-right: 20px;
+    font-size: 11px;
+    text-align: center;
+}
+
+.song-artist p {
+    color: #aaa;
+    font-size: 9px;
+}
+
+.song-artist img {
     width: 100%;
+}
+
+.popular img {
+    border-radius: 50%;
 }
 
 
@@ -204,6 +237,31 @@ footer {
     background-color: #282828;
 }
 
+footer .row-flex {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+
+.footer-left {
+    width: 20%;
+    height: 100%;
+    background-color: chocolate;
+}
+
+.footer-center {
+    width: 40%;
+    height: 100%;
+    background-color: chocolate;
+}
+
+.footer-right {
+    width: 20%;
+    height: 100%;
+    background-color: chocolate;
+}
 
 /* ------------------------------MEDIA QUERY--MOBILE----------------------- */
 @media screen and (max-width: 574px) {
@@ -237,4 +295,10 @@ footer {
     .sidebar-box-2 .post-media-query .profile-logo {
         width: 15px;
     }
+
+    
+    .box-main .song-artist {
+        width: calc(100% / 2.5);
+    }
+
 }
