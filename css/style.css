@@ -4,8 +4,14 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .container {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -18,8 +24,102 @@ main {
     height: 100%;
     background-color: #000;
     width: 200px;
+    color: #fff;
 }
 
+.sidebar .row-flex {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+.sidebar-box-1 #logo {
+    width: 100px;
+}
+
+.sidebar-box-1 ul {
+    list-style: none;
+}
+
+.sidebar-box-1 .interfaces li {
+    margin: 8px 0;
+}
+
+.sidebar-box-1 .playlist li {
+    margin: 10px 0;
+}
+
+.sidebar-box-1 .interfaces, 
+.sidebar-box-1 .playlist,
+.sidebar-box-1 h3  {
+    margin: 10px 0;
+    font-size: 10px;
+    color: #aaa;
+}
+
+
+.sidebar-box-1 .interfaces img{
+    width: 20px;
+    vertical-align: middle;
+}
+
+.post-media-query {
+    width: 20px;
+    display: none ;
+}
+
+.sidebar-box-1 .playlist #playlist {
+    color: #fff;
+}
+
+.sidebar-box-1 .playlist #plus {
+    margin-bottom: 20px;
+}
+
+.sidebar .playlist #plus::before {
+    content: "\f067";
+    color: #000;
+    background-color: #aaa;
+    padding: 6px 7px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 5px;
+}
+
+.sidebar-box-2 img {
+    width: 15px;
+    vertical-align: middle;
+}
+
+.sidebar-box-2 .download {
+    font-size: 10px;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.sidebar-box-2 .download-logo {
+    width: 10px;
+}
+
+
+.sidebar-box-2 hr {
+    border: #aaa solid 0.5px ;
+}
+
+.sidebar-box-2 .profile {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.sidebar-box-2 .profile-logo {
+    background-color: #aaa;
+    border-radius: 50%;
+    width: 12px;
+}
+
+/* ---------------------------------------------- */
 .main-content {
     height: 100%;
     width: calc(100% - 200px);
@@ -56,5 +156,26 @@ footer {
 
     .main-content {
         flex-grow: 1;
+    }
+
+    .sidebar .row-flex {
+        margin: 0 auto;
+    }
+
+    .sidebar .pre-media-query {
+        display: none;
+    }
+
+    .sidebar .post-media-query {
+        display: block;
+    }
+
+    .sidebar-box-2 .post-media-query .download-logo {
+        width: 12px;
+        margin-bottom: 10px;
+    }
+
+    .sidebar-box-2 .post-media-query .profile-logo {
+        width: 15px;
     }
 }
