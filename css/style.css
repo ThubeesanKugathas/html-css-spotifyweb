@@ -20,11 +20,21 @@ main {
     display: flex;
 }
 
+/* ----------------------SIDEBAR--------------------------- */
 .sidebar {
     height: 100%;
     background-color: #000;
     width: 200px;
     color: #fff;
+}
+
+.sidebar-box-1 ul {
+    list-style: none;
+}
+
+.post-media-query {
+    width: 20px;
+    display: none ;
 }
 
 .sidebar .row-flex {
@@ -37,10 +47,6 @@ main {
 
 .sidebar-box-1 #logo {
     width: 100px;
-}
-
-.sidebar-box-1 ul {
-    list-style: none;
 }
 
 .sidebar-box-1 .interfaces li {
@@ -59,16 +65,12 @@ main {
     color: #aaa;
 }
 
-
 .sidebar-box-1 .interfaces img{
     width: 20px;
     vertical-align: middle;
 }
 
-.post-media-query {
-    width: 20px;
-    display: none ;
-}
+
 
 .sidebar-box-1 .playlist #playlist {
     color: #fff;
@@ -119,28 +121,83 @@ main {
     width: 12px;
 }
 
-/* ---------------------------------------------- */
+/* ----------------------MAIN-CONTENT----------------------- */
 .main-content {
     height: 100%;
     width: calc(100% - 200px);
     position: relative;
 }
 
+/* BOX-HEADER  */
 .box-header {
     position: fixed;
     height: 50px;
     width: 100%;
     background-color: #080b12;
+    color: #fff;
 }
 
+.box-header p {
+    position: fixed;
+    right: 0;
+    top: 10px;
+    font-size: 8px;
+    padding: 8px 20px;
+    border: #fff solid 1px;
+    border-radius: 20px;
+}
+
+/* BOX-MAIN  */
 .box-main {
     overflow: auto;
     margin-top: 50px;
     height: calc(100% - 50px);
     background-color: #141922;
-
 }
 
+.box-main nav {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #fff;
+}
+
+.box-main nav ul {
+    list-style: none;
+}
+
+.box-main nav ul li {
+    display: inline-block;
+}
+
+.box-main nav ul li hr {
+    margin: 0 10px;
+    border: 0.5px solid #141922
+}
+
+.row-float::after {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+.recently-played h2 {
+    margin-left: 20px;
+    color: #fff;
+}
+
+.song {
+    float: left;
+    width: calc(100% / 8);
+    margin: 0 20px;
+}
+
+.song img {
+    width: 100%;
+}
+
+
+/* -------------------------FOOTER------------------------------ */
 
 footer {
     height: 50px;
@@ -148,10 +205,12 @@ footer {
 }
 
 
+/* ------------------------------MEDIA QUERY--MOBILE----------------------- */
 @media screen and (max-width: 574px) {
     
     .sidebar {
         width: 50px;
+        transition: all 0.3s;
     }
 
     .main-content {
