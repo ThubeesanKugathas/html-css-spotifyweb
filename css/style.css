@@ -49,6 +49,8 @@ main {
     padding: 10px 0;
 }
 
+
+/* SIDEBAR PARTE SUPERIORE  */
 .sidebar-box-1 {
     flex-grow: 1;
 }
@@ -112,7 +114,7 @@ main {
     margin-right: 5px;
 }
 
-
+/* SIDEBAR PARTE INFERIORE  */
 .sidebar-box-2 {
     padding-left: 15px;
 }
@@ -146,6 +148,10 @@ main {
     background-color: #aaa;
     border-radius: 50%;
     width: 12px;
+}
+
+.sidebar-box-2 span:hover {
+    text-decoration: underline;
 }
 
 /* ----------------------MAIN-CONTENT----------------------- */
@@ -399,6 +405,7 @@ footer .row-flex {
 
 
 /* ------------------------------MEDIA QUERY--MEDIUM----------------------- */
+
 @media screen and (min-width:575px) and (max-width:1060px) {
 
     .box-main .song-artist {
@@ -462,35 +469,33 @@ footer .row-flex {
         font-size: 7px;
         padding-right: 30px;
     }
-
-
 }
 
+/* -----------------------------------------STYLE INPUT TYPE=RANGE------------------------------------ */
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     input[type='range'] {
-      -webkit-appearance: none;
-      background-color: #ccc;
-      border-radius: 5px;
+        -webkit-appearance: none;
+        background-color: #fff;
+        border-radius: 5px;
     }
     
     input[type='range']::-webkit-slider-runnable-track {
-      height: 7px;
-      -webkit-appearance: none;
-      color: #13bba4;
+        height: 7px;
+        -webkit-appearance: none;
     }
     
     input[type='range']::-webkit-slider-thumb {
-      width: 12px;
-      -webkit-appearance: none;
-      height: 12px;
-      background: #434343;
-      border-radius: 50%;
-      cursor: pointer;
-      vertical-align: middle;
-
-      /* MEGA TODO, DA CHIEDERE POI  */
-      margin: -2px;
+        width: 12px;
+        -webkit-appearance: none;
+        height: 12px;
+        background: #434343;
+        border-radius: 50%;
+        cursor: pointer;
+        vertical-align: middle;
+        border: 2px solid #aaa;
+        /* MEGA TODO, DA CHIEDERE POI  */
+        margin: -2px;
     }
 
 
