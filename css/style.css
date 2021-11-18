@@ -274,7 +274,6 @@ main {
     transform: translate(-50%, -50%);
     color: #fff;
     display: inline-block;
-
 }
 
 .song-artist img {
@@ -286,6 +285,7 @@ main {
 .song-artist img:hover {
     filter: brightness(50%);
 }
+
 
 .popular img {
     border-radius: 50%;
@@ -464,4 +464,39 @@ footer .row-flex {
     }
 
 
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      -webkit-appearance: none;
+      background-color: #ccc;
+      border-radius: 5px;
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 7px;
+      -webkit-appearance: none;
+      color: #13bba4;
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+      width: 12px;
+      -webkit-appearance: none;
+      height: 12px;
+      background: #434343;
+      border-radius: 50%;
+      cursor: pointer;
+      vertical-align: middle;
+
+      /* MEGA TODO, DA CHIEDERE POI  */
+      margin: -2px;
+    }
+
+
+    input[type='range']::-webkit-slider-thumb:hover {
+        -webkit-appearance: none;
+        background: greenyellow;
+        border: 2px solid #aaa
+      }
 }
