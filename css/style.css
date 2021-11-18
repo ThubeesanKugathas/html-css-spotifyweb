@@ -8,16 +8,21 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-
 main {
     height: calc(100vh - 50px);
     display: flex;
+}
+
+.row-float::after {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+.row-flex {
+    display: flex;
+    width: 100%;
+    height: 100%;
 }
 
 /* ----------------------SIDEBAR--------------------------- */
@@ -41,8 +46,11 @@ main {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     padding: 10px 15px;
+}
+
+.sidebar-box-1 {
+    flex-grow: 1;
 }
 
 .sidebar-box-1 #logo {
@@ -90,6 +98,11 @@ main {
     margin-right: 5px;
 }
 
+.sidebar-box-1 .overflow {
+    overflow-y: auto;
+    height: 100px;
+}
+
 .sidebar-box-2 img {
     width: 15px;
     vertical-align: middle;
@@ -125,7 +138,6 @@ main {
 .main-content {
     height: 100%;
     width: calc(100% - 200px);
-    position: relative;
 }
 
 /* BOX-HEADER  */
@@ -135,6 +147,7 @@ main {
     width: 100%;
     background-color: #080b12;
     color: #fff;
+    opacity: 0.99;
 }
 
 .box-header p {
@@ -147,19 +160,24 @@ main {
     border-radius: 20px;
 }
 
+.box-header p:hover {
+    font-size: 10px;
+}
+
 /* BOX-MAIN  */
 .box-main {
-    overflow: auto;
-    margin-top: 50px;
-    height: calc(100% - 50px);
+    height: 100%;
+    overflow-y: auto;
     background-color: #141922;
+    padding-top: 50px;
+    color: #fff;
 }
 
 .box-main nav {
     text-align: center;
     margin-top: 10px;
-    font-size: 13px;
-    color: #fff;
+    font-size: 11px;
+    color: #aaa;
     margin-bottom: 30px;
 }
 
@@ -172,15 +190,13 @@ main {
     margin: 0 10px;
 }
 
-.box-main nav ul li hr {
-    margin: 0 10px;
-    border: 0.5px solid #141922
+.box-main nav ul li span {
+    border-bottom: 1px solid #141922;
 }
 
-.row-float::after {
-    display: table;
-    content: "";
-    clear: both;
+.box-main nav ul li span:hover {
+    border-color: greenyellow;
+    color: #fff;
 }
 
 .box-main h3,
@@ -198,7 +214,6 @@ main {
 .popular {
     margin-left: 20px;
     margin-bottom: 20px;
-    color: #fff;
 }
 
 .for-John>h3,
@@ -212,8 +227,20 @@ main {
     float: left;
     width: calc(100% / 7);
     margin-right: 20px;
-    font-size: 11px;
+    font-size: 70%;
     text-align: center;
+}
+
+.song-artist:hover {
+    text-decoration: underline;
+}
+
+.song-artist img:hover {
+    filter: brightness(50%);
+}
+
+.song-artist .play-button {
+    display: none;
 }
 
 .song-artist p {
@@ -239,30 +266,47 @@ footer {
 }
 
 footer .row-flex {
-    display: flex;
     justify-content: space-between;
-    width: 100%;
-    height: 100%;
+    background-color: #282828;
 }
 
 
-.footer-left {
-    width: 20%;
+.footer-left,
+.footer-right {
+    width: 200px;
+    max-width: calc(100% / 3);
     height: 100%;
-    background-color: chocolate;
+}
+
+.footer-left .row-flex {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    justify-content: space-between;
+}
+
+.footer-left img {
+    width: 20%;
+}
+
+.footer-left .footer-left-text {
+    font-size: 9px;
+    padding-right: 50px;
+}
+
+.footer-left .footer-left-icons {
+    font-size: 12px;
 }
 
 .footer-center {
-    width: 40%;
+    width: calc(100% - 400px);
+    flex-grow: 1;
     height: 100%;
     padding: 2px 0;
 }
 
 .footer-center .row-flex {
-    display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
     justify-content: center;
 }
 
@@ -270,48 +314,50 @@ footer .row-flex {
 .footer-center .icon-bottom {
     width: 100%;
     height: 50%;
- 
     text-align: center;
 }
 
 .footer-center .icon-top i {
-    margin: 2px 10px;
-    font-size: 12px;
+    padding: 2px 5px;
+    font-size: 10px;
     vertical-align: middle;
 }
 
 .footer-center .icon-top .fa-play-circle {
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .footer-center .icon-bottom .time {
     display: inline-block;
-    margin: 0 10px;
-    font-size: 12px;
+    padding: 0 5px;
+    font-size: 9px;
 }
 
 .footer-center .icon-bottom input {
-    width: 80%;
+    width: 50%;
     vertical-align: middle;
 }
 
-
-.footer-right {
-    width: 20%;
-    height: 100%;
-    display: flex;
+.footer-right .row-flex {
     align-items: center;
 }
 
-
 .footer-right .fas {
     margin-left: 10px;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .footer-right input {
     width: 60%;
     margin-left: 5px;
+}
+/* ------------------------------MEDIA QUERY--MEDIUM----------------------- */
+@media screen and (min-width:575px) and (max-width:1060px) {
+
+    /* .box-main .song-artist {
+        width: calc(100% / 5);
+    } */
+
 }
 
 /* ------------------------------MEDIA QUERY--MOBILE----------------------- */
@@ -322,9 +368,6 @@ footer .row-flex {
         transition: all 0.3s;
     }
 
-    .main-content {
-        flex-grow: 1;
-    }
 
     .sidebar .row-flex {
         margin: 0 auto;
@@ -348,8 +391,17 @@ footer .row-flex {
     }
 
     
+    .main-content {
+        flex-grow: 1;
+    }
+    
     .box-main .song-artist {
         width: calc(100% / 2.5);
+    }
+
+    .footer-left .footer-left-text {
+        font-size: 7px;
+        padding-right: 30px;
     }
 
 }
