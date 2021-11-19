@@ -221,6 +221,10 @@ ul {
     position: relative;
 }
 
+.box-main nav ul li:hover span {
+    color: #fff;
+}
+
 .box-main nav ul li:hover span:before {
     content: "";
     position: absolute;
