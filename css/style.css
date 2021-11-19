@@ -31,9 +31,10 @@ main {
     background-color: #000;
     width: 200px;
     color: #fff;
+    overflow-y: hidden;
 }
 
-.sidebar-box-1 ul {
+.sidebar-scroll ul {
     list-style: none;
 }
 
@@ -51,9 +52,7 @@ main {
 
 
 /* SIDEBAR PARTE SUPERIORE  */
-.sidebar-box-1 {
-    flex-grow: 1;
-}
+
 
 .sidebar-box-1 #logo,
 .sidebar-box-1 h3,
@@ -74,26 +73,13 @@ main {
     border-left: 1px solid greenyellow;
 }
 
-.sidebar-box-1 .playlist li {
-    margin: 10px 0;
-}
-
-.sidebar-box-1 .playlist li:hover,
-.sidebar-box-1 .playlist h3:hover {
-    color: #fff;
-}
-
-.sidebar-box-1 .interfaces, 
-.sidebar-box-1 .playlist,
-.sidebar-box-1 h3  {
-    margin: 10px 0;
-    font-size: 10px;
-    color: #aaa;
-}
-
 .sidebar-box-1 .interfaces img{
     width: 20px;
     vertical-align: middle;
+}
+
+.sidebar-box-1 .playlist h3:hover {
+    color: #fff;
 }
 
 .sidebar-box-1 .playlist #playlist {
@@ -104,7 +90,7 @@ main {
     margin-bottom: 20px;
 }
 
-.sidebar .playlist #plus::before {
+.sidebar-box-1 .playlist #plus::before {
     content: "\f067";
     color: #000;
     background-color: #aaa;
@@ -112,6 +98,30 @@ main {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     margin-right: 5px;
+}
+
+.sidebar-box-1 .interfaces, 
+.sidebar-box-1 .playlist,
+.sidebar-box-1 h3,
+.sidebar-scroll li  {
+    margin: 10px 0;
+    font-size: 10px;
+    color: #aaa;
+}
+
+/* SIDEBAR SCROLL  */
+.sidebar-scroll {
+    flex-grow: 1;
+    min-height: 120px;
+    overflow-y: auto;
+}
+
+.sidebar-scroll li {
+    padding-left: 15px;
+}
+
+.sidebar-scroll li:hover {
+    color: #fff;
 }
 
 /* SIDEBAR PARTE INFERIORE  */
@@ -214,11 +224,17 @@ main {
 
 .box-main nav ul li span {
     border-bottom: 1px solid #141922;
+    position: relative;
 }
 
-.box-main nav ul li span:hover {
-    border-color: greenyellow;
-    color: #fff;
+.box-main nav ul li:hover span:before {
+    content: "";
+    position: absolute;
+    left: 25%;
+    bottom: 0;
+    height: 1px;
+    width: 50%;
+    border-bottom: 1px solid greenyellow;
 }
 
 .box-main h3,
@@ -404,6 +420,42 @@ footer .row-flex {
 }
 
 
+/* -----------------------------------------STYLE INPUT TYPE=RANGE------------------------------------ */
+
+
+input[type='range'] {
+    -webkit-appearance: none;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+    height: 7px;
+    -webkit-appearance: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    width: 12px;
+    -webkit-appearance: none;
+    height: 12px;
+    background: #434343;
+    border-radius: 50%;
+    cursor: pointer;
+    vertical-align: middle;
+    border: 2px solid #aaa;
+    margin: -2px;
+}
+
+
+input[type='range']::-webkit-slider-thumb:hover {
+    -webkit-appearance: none;
+    background: greenyellow;
+    border: 2px solid #aaa
+    }
+
+
+
+
 /* ------------------------------MEDIA QUERY--MEDIUM----------------------- */
 
 @media screen and (min-width:575px) and (max-width:1060px) {
@@ -447,6 +499,10 @@ footer .row-flex {
         margin: 0 auto;
     }
 
+    .sidebar-scroll li {
+        display: none;
+    }
+
     .sidebar-box-2 .post-media-query .download-logo {
         width: 12px;
         margin-bottom: 10px;
@@ -469,39 +525,4 @@ footer .row-flex {
         font-size: 7px;
         padding-right: 30px;
     }
-}
-
-/* -----------------------------------------STYLE INPUT TYPE=RANGE------------------------------------ */
-
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    input[type='range'] {
-        -webkit-appearance: none;
-        background-color: #fff;
-        border-radius: 5px;
-    }
-    
-    input[type='range']::-webkit-slider-runnable-track {
-        height: 7px;
-        -webkit-appearance: none;
-    }
-    
-    input[type='range']::-webkit-slider-thumb {
-        width: 12px;
-        -webkit-appearance: none;
-        height: 12px;
-        background: #434343;
-        border-radius: 50%;
-        cursor: pointer;
-        vertical-align: middle;
-        border: 2px solid #aaa;
-        /* MEGA TODO, DA CHIEDERE POI  */
-        margin: -2px;
-    }
-
-
-    input[type='range']::-webkit-slider-thumb:hover {
-        -webkit-appearance: none;
-        background: greenyellow;
-        border: 2px solid #aaa
-      }
 }
